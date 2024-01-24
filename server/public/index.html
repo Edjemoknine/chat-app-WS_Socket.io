@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.7.4/socket.io.min.js"
+      integrity="sha512-skuhu6jj+sQnhLq1Txsack8VfnIrX8wL+MTFilYlFFT/NuLJm7eya7zOROs39Jy5cjASMEWqxLzijRVmKhsqWQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script defer src="app.js"></script>
+    <title>Socket.io</title>
+  </head>
+  <body>
+    <main>
+      <form class="join">
+        <input
+          type="text"
+          id="name"
+          size="5"
+          required
+          placeholder="Your name"
+        />
+        <input
+          type="text"
+          id="room"
+          size="5"
+          required
+          placeholder="Chat room"
+        />
+        <button id="join" type="submit">Join</button>
+      </form>
+      <!-- Messages panel -->
+      <div>
+        <ul class="chat-dispaly"></ul>
+        <p class="user-list"></p>
+        <p class="room-list"></p>
+        <div class="active"></div>
+      </div>
+
+      <!-- Messages panel -->
+
+      <form class="form-msg">
+        <input type="text" required placeholder="Send Message" id="message" />
+        <button type="submit" id="sendBtn">Send</button>
+      </form>
+    </main>
+  </body>
+</html>
