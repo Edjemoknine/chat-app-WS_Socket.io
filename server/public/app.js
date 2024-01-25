@@ -39,8 +39,8 @@ socket.on("message", (data) => {
   const { name, text, time } = data;
   const li = document.createElement("li");
   li.className = "post";
-  if (name === nameInput.value) li.className = "post post-left";
-  if (name !== nameInput.value) li.className = "post post-right";
+  if (name === nameInput.value) li.className = "post-left";
+  if (name !== nameInput.value) li.className = "post-right";
   if (name !== "Admin") {
     li.innerHTML = `
     <div class="post-header ${name === nameInput.value ? "user" : "peer"}">
@@ -52,10 +52,10 @@ socket.on("message", (data) => {
     </div>
     `;
   } else {
-    li.innerHTML = `<div class='post'>${text}</div>`;
+    li.innerHTML = `<div class='post post-text'>${text}</div>`;
   }
   document.querySelector("ul").appendChild(li);
-  // chatDisplay.scrollTop = chatDisplay.scrollHeight;
+  chatDisplay.scrollTop = chatDisplay.scrollHeight;
 });
 
 message.addEventListener("keypress", (e) => {

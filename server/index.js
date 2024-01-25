@@ -4,7 +4,7 @@ const PORT = process.env.PORT || 3500;
 const ADMIN = "Admin";
 const app = express();
 
-//  in this way i will run fronten and backend in the same port
+//  in this way i will run frontend and backend in the same port
 import path from "path";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
@@ -42,7 +42,6 @@ io.on("connection", (socket) => {
 
   //enter Room
   socket.on("enterRoom", ({ name, room }) => {
-    // console.log(name, room);
     // make notif if any user leave room
     const prevRoom = getUser(socket.id)?.room;
 
